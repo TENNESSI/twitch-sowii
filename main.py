@@ -5,14 +5,14 @@ import json
 import os
 import shutil
 
-test_users = ['real_anq', 'ovcesobaka', 'tinkertwitcher']
+test_users = ['real_anq', 'qwerty_poiul', 'tinkertwitcher', 'kitaez_0']
 client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
 class Bot(commands.Bot):
     def __init__(self):
         super().__init__(
             token=twitch_token,
             prefix='!',
-            initial_channels=['real_anq', 'sowiiaxi_', 'mandellshtam']
+            initial_channels=['real_anq', 'qwerty_poiul', 'eteiri']
         )
     async def event_ready(self):
         print(f'Бот {self.nick} подключен!')
