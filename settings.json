@@ -1,0 +1,21 @@
+[
+    {
+        "connected_channels": [
+            "sowiiaxi_",
+            "real_anq",
+            "mandellshtam"
+        ]
+    },
+    {
+        "channel": "sowiiaxi_",
+        "aigirl": false
+    },
+    {
+        "channel": "real_anq",
+        "aigirl": true
+    },
+    {
+        "channel": "mandellshtam",
+        "aigirl": false
+    }
+]
