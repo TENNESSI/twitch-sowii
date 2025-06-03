@@ -3,7 +3,9 @@
         "connected_channels": [
             "sowiiaxi_",
             "real_anq",
-            "mandellshtam"
+            "mandellshtam",
+            "eteiri",
+            "kotsoyo"
         ]
     },
     {
@@ -16,6 +18,14 @@
     },
     {
         "channel": "mandellshtam",
+        "aigirl": false
+    },
+    {
+        "channel": "eteiri",
+        "aigirl": false
+    },
+    {
+        "channel": "kotsoyo",
         "aigirl": false
     }
 ]

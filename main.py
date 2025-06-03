@@ -5,7 +5,14 @@ import json
 import os
 import shutil
 import random
+import logging
+import asyncio
 import sys
+
+
+# logging.basicConfig(level=logging.DEBUG)
+# logger = logging.getLogger('twitchio')
+# logger.setLevel(logging.DEBUG)
 
 # test_users = ['real_anq', 'tinkertwitcher', '']
 client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
@@ -55,6 +62,7 @@ class Bot(commands.Bot):
                     stream=False
                 )
                 content = response.choices[0].message.content
+                await asyncio.sleep(1.5)
                 await channel.send(f'@{message.author.name} {content}')
                 messages.append({'role': 'assistant', 'content': content})
 
@@ -62,7 +70,7 @@ class Bot(commands.Bot):
                     json.dump(messages, f, indent=4)
             else:
                 await channel.send(f'Функция отключена на этом канале! (!aigirl)')
-        elif message.content.lower() == '!пенис':
+        elif message.content.lower() == '!писюнярик':
             if message.author.name == 'dariydoll':
                 await channel.send('Дашка ты без пениса, а тот что сзади 27см!!')
             else:
@@ -70,10 +78,10 @@ class Bot(commands.Bot):
                 if penis<1:
                     msg=f'{penis}см, поздравляю у тебя вагина'
                 elif penis>50:
-                    msg = f'{penis}см, хороший красивый пенис, почти как у Ани'
+                    msg = f'{penis}см, хороший красивый писюнярик, почти как у Ани'
                 else:
-                    msg = f'{penis}см, средний пенис, не впечатлил'
-                print('сработал пенис')
+                    msg = f'{penis}см, средний писюнярик, не впечатлил'
+                await asyncio.sleep(1.5)
                 await channel.send(f'@{message.author.name}, {msg}')
         await self.handle_commands(message)
 
@@ -81,8 +89,10 @@ class Bot(commands.Bot):
     @commands.command()
     async def hello(self, ctx):
         if ctx.author.name == 'tinkertwitcher':
+            await asyncio.sleep(1.5)
             await ctx.send(f'Привет, создатель!')
         else:
+            await asyncio.sleep(1.5)
             await ctx.send(f'Привет, {ctx.author.name}!')
 
     @commands.command()
@@ -94,9 +104,11 @@ class Bot(commands.Bot):
                 if channel['channel'] == ctx.channel.name:
                     if not channel['aigirl']:
                         channel['aigirl'] = True
+                        await asyncio.sleep(1.5)
                         await ctx.send('Функция включена!')
                     else:
                         channel['aigirl'] = False
+                        await asyncio.sleep(1.5)
                         await ctx.send('Функция отключена!')
             with open('settings.json', 'w') as f:
                 json.dump(settings, f, indent=4)
