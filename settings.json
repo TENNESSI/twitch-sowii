@@ -5,27 +5,27 @@
             "real_anq",
             "mandellshtam",
             "eteiri",
-            "kotsoyo"
+            "1freya_tv"
         ]
     },
     {
         "channel": "sowiiaxi_",
-        "aigirl": true
+        "aigirl": false
     },
     {
         "channel": "real_anq",
-        "aigirl": true
+        "aigirl": false
     },
     {
         "channel": "mandellshtam",
-        "aigirl": true
+        "aigirl": false
     },
     {
         "channel": "eteiri",
         "aigirl": false
     },
     {
-        "channel": "kotsoyo",
+        "channel": "1freya_tv",
         "aigirl": false
     }
 ]

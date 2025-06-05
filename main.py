@@ -47,7 +47,7 @@ class Bot(commands.Bot):
             return
         print(f'{message.author.name}: {message.content}')
         channel = self.get_channel(message.channel.name)
-        if  message.content.startswith('@tinkertwitcher'):
+        if  message.content.startswith('@ushki_na_makushka'):
             if get_settings(message.channel.name, 'aigirl'):
                 if os.path.exists(f'data/{message.author.name}.json') == False:
                     shutil.copy('data/system.json', f'data/{message.author.name}.json')
