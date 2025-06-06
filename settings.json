@@ -5,12 +5,12 @@
             "real_anq",
             "mandellshtam",
             "eteiri",
-            "1freya_tv"
+            "yunocrush"
         ]
     },
     {
         "channel": "sowiiaxi_",
-        "aigirl": false
+        "aigirl": true
     },
     {
         "channel": "real_anq",
@@ -25,7 +25,7 @@
         "aigirl": false
     },
     {
-        "channel": "1freya_tv",
-        "aigirl": false
+        "channel": "yunocrush",
+        "aigirl": true
     }
 ]
