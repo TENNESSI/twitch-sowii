@@ -4,8 +4,8 @@
             "sowiiaxi_",
             "real_anq",
             "mandellshtam",
-            "eteiri",
-            "yunocrush"
+            "kor_lis",
+            "fintiflush"
         ]
     },
     {
@@ -14,18 +14,18 @@
     },
     {
         "channel": "real_anq",
-        "aigirl": false
+        "aigirl": true
     },
     {
         "channel": "mandellshtam",
         "aigirl": false
     },
     {
-        "channel": "eteiri",
-        "aigirl": false
+        "channel": "kor_lis",
+        "aigirl": true
     },
     {
-        "channel": "yunocrush",
+        "channel": "fintiflush",
         "aigirl": true
     }
 ]

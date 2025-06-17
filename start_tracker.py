@@ -9,11 +9,14 @@ load_dotenv()
 STEAM_API_KEY = os.getenv('STEAM_API_KEY')
 OPEN_DOTA_API = 'https://api.opendota.com/api'
 
+<<<<<<< HEAD
 
 def to_steam32(steam_id_64):
     return str(int(steam_id_64) - 76561197960265728)
 
 
+=======
+>>>>>>> f7d2cbe8a81554cf928c50ce8c8ecedbf46f8e57
 class MatchTracker:
     def __init__(self):
         self.tracked_players = {}
@@ -31,12 +34,25 @@ class MatchTracker:
         try:
             url = f'https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key={STEAM_API_KEY}&steamids={steam_id_64}'
             async with self.session.get(url) as response:
+<<<<<<< HEAD
                 data = await response.json(content_type=None)
                 player = data['response']['players'][0]
 
                 if 'gameid' in player and player['gameid'] == '570':
                     opendota_url = f'{OPEN_DOTA_API}/players/{to_steam32(steam_id_64)}/recentMatches'
                     async with self.session.get(opendota_url) as opendota_response:
+=======
+                print(url)
+                print(response.status)
+                data = await response.json(content_type=None)
+                print(data)
+                player = data['response']['players'][0]
+
+                if 'gameid' in player and player['gameid'] == '570':
+                    opendota_url = f'{OPEN_DOTA_API}/players/{steam_id_64[3:]}/recrentMatches'
+                    async with self.session.get(opendota_url) as opendota_response:
+                        print(f'Запрос {opendota_url} статус {response.status}')
+>>>>>>> f7d2cbe8a81554cf928c50ce8c8ecedbf46f8e57
                         matches = await opendota_response.json(content_type=None)
                         current_match = next((m for m in matches if m['lobby_type'] == 7), None)
 
