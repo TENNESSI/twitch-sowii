@@ -1,10 +1,10 @@
-from dota2gsi.server import GameStateServer
+from dota2gsi import Server
 
 
 class InventoryTracker:
     def __init__(self, port = 3000):
-        self.server = GameStateServer(port=port)
-        self.server.on('update')(self.handle_update)
+        self.server = Server(port=port)
+        self.server.on_update(self.handle_update)
         self.player_inventories = {}
 
     def handle_update(self, state):

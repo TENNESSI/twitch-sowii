@@ -32,14 +32,15 @@ class MatchTracker:
             async with self.session.get(url) as response:
                 print(f'---------\n{url}\n{response.status}\n---------')
                 data = await response.json(content_type=None)
+                print(data)
                 player = data['response']['players'][0]
 
                 if 'gameid' in player and player['gameid'] == '570':
                     opendota_url = f'{OPEN_DOTA_API}/players/{to_steam32(steam_id_64)}/recentMatches'
                     async with self.session.get(opendota_url) as opendota_response:
                         print(f'---------\n{opendota_url}\n{opendota_response.status}\n---------')
-                        print(f'Запрос {opendota_url} статус {response.status}')
                         matches = await opendota_response.json(content_type=None)
+                        # print(matches)
                         current_match = next((m for m in matches if m['lobby_type'] == 7), None)
 
                         if current_match:
