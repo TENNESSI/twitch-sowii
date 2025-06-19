@@ -11,6 +11,8 @@ async def check_current_match(steam_id_64):
 
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as response:
+            print(url)
+            print(response.status)
             try:
                 data = await response.json(content_type=None)
             except Exception as _e:
